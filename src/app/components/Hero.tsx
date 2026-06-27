@@ -93,12 +93,21 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center mt-8"
         >
-          <Button variant="primary" size="lg">
+          {/* Botão 1 - Azul escuro (visível em qualquer fundo) */}
+          <a
+            href="#projetos"
+            className="bg-[#1A2744] text-white px-8 py-4 rounded-lg font-medium text-lg shadow-lg hover:bg-[#1A2744]/90 transition-all hover:scale-105"
+          >
             Ver Projetos
-          </Button>
-          <Button variant="outline" size="lg">
+          </a>
+          
+          {/* Botão 2 - Dourado (contraste com o fundo) */}
+          <a
+            href="/contacto"
+            className="bg-[#C9A84C] text-white px-8 py-4 rounded-lg font-medium text-lg shadow-lg hover:bg-[#C9A84C]/90 transition-all hover:scale-105"
+          >
             Contactar
-          </Button>
+          </a>
         </motion.div>
 
         <motion.div
