@@ -9,6 +9,7 @@ interface ButtonProps {
   size?: 'sm' | 'md' | 'lg';
   className?: string;
   onClick?: () => void;
+  disabled?: boolean;
 }
 
 export function Button({ 
@@ -16,7 +17,8 @@ export function Button({
   variant = 'primary', 
   size = 'md',
   className = '',
-  onClick 
+  onClick,
+  disabled = false,
 }: ButtonProps) {
   const variants = {
     primary: 'bg-premium-gold text-white hover:bg-premium-gold/90',
@@ -32,10 +34,11 @@ export function Button({
 
   return (
     <motion.button
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      className={`${variants[variant]} ${sizes[size]} rounded-lg font-medium transition-all duration-300 ${className}`}
+      whileHover={{ scale: disabled ? 1 : 1.02 }}
+      whileTap={{ scale: disabled ? 1 : 0.98 }}
+      className={`${variants[variant]} ${sizes[size]} rounded-lg font-medium transition-all duration-300 ${disabled ? 'opacity-50 cursor-not-allowed' : ''} ${className}`}
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </motion.button>

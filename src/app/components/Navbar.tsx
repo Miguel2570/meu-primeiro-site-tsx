@@ -34,9 +34,6 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <button className="bg-[#C9A84C] text-white px-6 py-2 rounded-lg hover:bg-[#C9A84C]/90 transition-colors">
-              Orçamento
-            </button>
           </div>
 
           <button
@@ -71,9 +68,6 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <button className="bg-[#C9A84C] text-white px-6 py-2 rounded-lg hover:bg-[#C9A84C]/90 transition-colors w-full">
-              Orçamento
-            </button>
           </div>
         </motion.div>
       )}
